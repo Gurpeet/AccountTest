@@ -1,0 +1,47 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+body{
+    background-color:blue; 
+    text-align: center;
+}
+#acctDetails {
+    width: 100%;
+    background-color: white;
+}
+
+.button-width {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#acctDetails td, #acctDetails th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#acctDetails th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #ddd;
+    color: black;
+}
+
+.font-blue {
+    color: blue;
+}
+
+.color-red {
+    color:red;
+}
+
+.color-green {
+    color:green;
+}

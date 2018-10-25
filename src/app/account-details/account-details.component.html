@@ -1,0 +1,30 @@
+<div class="center">
+  <table class="table-width" id="acctDetails">
+    <tr>
+      <th>Account
+          <i class="fas fa-sort-up" *ngIf="!sortAsc" (click)="toggleSort()"></i>
+          <i class="fas fa-sort-down" *ngIf="sortAsc" (click)="toggleSort()"></i>
+      </th>
+      <th>
+        <div>
+          Available Cash
+        </div>
+        <div>Today's Change</div>
+      </th>
+    </tr>
+    <tr *ngFor="let accountDetail of accountDetails; let i = index ">
+      <ng-container *ngIf="initialLoad == 0 || i < initialLoad">
+        <td class="font-blue">{{accountDetail.accountName}}</td>
+        <td>
+          <div>
+            {{accountDetail.availableCash | currency}}
+          </div>
+          <div [ngClass]="accountDetail.percentChange >= 0 ? 'color-green' : 'color-red'">
+            {{accountDetail.percentChange}}% / {{accountDetail.amountChange| currency}}
+          </div>
+        </td>
+      </ng-container>
+    </tr>
+  </table>
+  <button class="button-width" (click)="loadMore()" *ngIf="initialLoad !== 0">Load More</button>
+</div>
